@@ -13,4 +13,6 @@ While `pyodide` proved very useful to reach the goal, I found a few disadvantage
 3) in terms of development time, writing a whole frontend in html and then connecting to bits of code is longer than writing a GUI that can import scripts directly and run them in the command line at the same time as the frontend.
 4) `pyodide` seems to have issues running certain parts of codes. The same identical code that has no problems running on my Python shell does not run in `pyodide`(presumably due to how `numpy` deals with imaginary numbers through `pyodide`.)
 
-It was still a useful experience. I will keep playing around with these ideas.
+It was still a useful experience. I will keep playing around with these ideas. Below you can find a print screen:
+
+![A modern GUI!](/printscreen.png)
