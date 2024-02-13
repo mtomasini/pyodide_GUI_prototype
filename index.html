@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Make things look better -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css">
+
+  <!-- Use light theme -->
+  <html data-theme="light">
+
+  </html>
+
+  <!-- Enable python -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+  <!-- Enable plotting with vega-lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+
+  <!-- Simplify CSV parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+
+<head>
+  <title>Simple Python GUI</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <article>
+      <h1>Simple GUI</h1>
+      <label>Frequency of oscillation:
+        <input type="range" min="1" max="20" value="5" id="frequency" name="frequency" />
+      </label>
+      <label>Phase of oscillation:
+        <input type="range" min="0" max="5" value="0" id="phase" name="phase" />
+      </label>
+      <label>Damping factor:
+        <input type="range" min="0.1" max="10" value="7" id="damping" name="damping" />
+      </label>
+
+      <label>Type of oscillation</label>
+      <select id="oscillation" required>
+        <option value="" selected>Select...</option>
+        <option>Normal oscillation</option>
+        <option>Damped oscillation</option>
+      </select>
+
+      <button id="firingbutton">Show plots</button>
+
+
+      <div id="plot" style="width: 100%; display: flex;"></div>
+
+    </article>
+
+    <article>
+      <details>
+        <summary role="button" class="secondary">Manual variable insert</summary>
+        <label for="fileInput">Upload data here:
+          <input type="file" id="fileInput" accept=".csv" />
+        </label>
+        <div class="grid">
+          <div>
+            <input type="number" name="var11" />
+            <input type="number" name="var12" />
+            <input type="number" name="var13" />
+          </div>
+          <div>
+            <input type="number" name="var21" />
+            <input type="number" name="var22" />
+            <input type="number" name="var23" />
+          </div>
+          <div>
+            <input type="number" name="var31" />
+            <input type="number" name="var32" />
+            <input type="number" name="var33" />
+          </div>
+        </div>
+
+      </details>
+    </article>
+    <article>
+      <details>
+        <summary role="button" class="outline secondary">Other buttons</summary>
+        <h2> Other buttons</h2>
+
+        <fieldset>
+          <label for="switch">
+            <input type="checkbox" id="switch" name="switch" role="switch">
+            This is a switch
+          </label>
+          <label for="switch_disabled">
+            <input type="checkbox" id="switch_disabled" name="switch_disabled" role="switch_disabled" disabled checked>
+            An unchangeable checkbox.
+          </label>
+          <label for="terms">
+            <input type="checkbox" id="terms" name="terms">
+            A changeable checkbox.
+          </label>
+          <label for="terms_sharing">
+            <input type="checkbox" id="terms_sharing" name="terms_sharing" checked>
+            A changeable checkbox.
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Size</legend>
+          <label for="small">
+            <input type="radio" id="small" name="size" value="small" checked>
+            Fabio
+          </label>
+          <label for="medium">
+            <input type="radio" id="medium" name="size" value="medium">
+            Matteo
+          </label>
+          <label for="large">
+            <input type="radio" id="large" name="size" value="large">
+            Prado
+          </label>
+        </fieldset>
+      </details>
+
+    </article>
+  </div>
+
+
+  <script type="module" src="main.js"></script>
+
+
+
+</body>
+
+<footer>
+  <div class="container-fluid">
+    <article data-theme="dark">
+      <p>InfraVis made me do this!</p>
+    </article>
+
+  </div>
+
+
+</footer>
+
+
+</html>
